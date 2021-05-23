@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+body{
+    margin :0;
+    background-color: lightslategray;
+
+}
+
+#div1{
+    width:30%;
+    height:200px;
+    background-color: lightgray;
+    position:absolute;
+    border-radius: 10px;
+    left: 35%;
+    top: 25%;
+}
+
+#kullaniciadi{
+
+    width: 150px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#parola{
+
+width: 150px;
+height: 30px;
+margin-left: 60px;
+margin-top: 20px;
+}
+
+#btn{
+
+width: 150px;
+height: 30px;
+margin-left: 20px;
+margin-top: 10px;
+
+}
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+    <div id="div1">
+        <label style ="margin-left:60px;" for ="kullaniciadi">kullanıcı adı :</label>
+        <input id="kullaniciadi" type="text" />
+        <label style ="margin-left:60px;" for ="parola">parola:</label>
+        <input id="parola" type="password" />
+            <br /><br />
+            <button onclick ="girisonayi()" id="btn">giriş yap</button> 
+
+    </div>
+
+
+    <script>
+
+var kullanicilar = [{kullaniciadi: "b191210064", parola: "123"}];
+
+var girilenkullaniciadi;
+var girilenparola;
+
+var x;
+
+function kontrolet()
+{
+
+       girilenkullaniciadi = document.getElementById("kullaniciadi").value;
+       girilenparola =document.getElementById("parola").value;
+
+
+  for(x of kullanicilar){
+
+    if ((x.kullaniciadi == girilenkullaniciadi) && (x.parola == girilenparola)){
+
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+}
+          function girisonayi() {
+
+                 kontrolet();
+
+                   if (kontrolet()) {
+
+                      window.open("index.html","_self");
+                      }
+                       else{
+                        alert("hatalı");
+                          }
+      }
+    
+
+
+
+    </script>
+    
+</body>
+</html>
